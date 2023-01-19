@@ -1,6 +1,6 @@
 ![Languages](https://img.shields.io/badge/language-javascript-informational)
 ![Platform](https://img.shields.io/badge/platform-jquery-informational)
-![Git](https://img.shields.io/github/watchers/e7works-git/web-pc?label=%20&style=social)
+![Git](https://img.shields.io/github/watchers/e7works-git/web-webrtc-conference?label=%20&style=social)
 
 # WEBRTC - 회의 샘플
 
