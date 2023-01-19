@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+]>
+<svg version="1.1" id="레이어_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="20px" height="20px" viewBox="2 2 20 20" style="enable-background:new 2 2 20 20;" xml:space="preserve">
+<path style="opacity:0.5;fill:#FFFFFF;" d="M15.333,9.45v-3.4L22,12l-6.667,5.95v-3.4H8.667v-5.1H15.333z M13.667,17.95v-0.071
+	c-0.981,0.583-2.119,0.922-3.333,0.922c-3.676,0-6.667-3.052-6.667-6.801s2.991-6.8,6.667-6.8c1.215,0,2.352,0.338,3.333,0.921
+	V4.212C12.645,3.757,11.519,3.5,10.333,3.5C5.731,3.5,2,7.306,2,12s3.731,8.5,8.333,8.5c1.186,0,2.311-0.256,3.333-0.713V17.95z"/>
+</svg>

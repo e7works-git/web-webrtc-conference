@@ -1,0 +1,1767 @@
+body {
+  font-family: 'Noto Sans KR';
+  font-weight: 400;
+  transform: all;
+  overflow: hidden;
+}
+
+section.rtc3 {
+  width: 100vw;
+  height: 100vh;
+  background: #282828;
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.toast_pop {
+  font-size: 22px;
+  width: 60%;
+  left: calc(20% - 20px);
+  top: 30px;
+  padding: 20px;
+  position: fixed;
+  color: #fff;
+  background-color: rgb(0 0 0 / 60%);
+  z-index: 99999999;
+  text-align: center;
+  border-radius: 50px;
+  -webkit-box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+  -moz-box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+  box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+}
+.toast_pop:hover {
+  background-color: rgb(0 0 0 / 80%);
+  cursor: pointer;
+}
+
+.video-placeholder {
+  width: 100%;
+  display: inline-block;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0) 25%,
+    #2bc48983 25%,
+    #2bc48983 50%,
+    rgb(0, 0, 0, 0) 50%,
+    rgb(0, 0, 0, 0) 75%,
+    #2bc48983 75%,
+    #2bc48983 100%
+  );
+  /* background: linear-gradient(45deg, red 25%, green 0, green 50%, red 0, red 75%, green 0); */
+  -webkit-background-size: 30px 30px;
+  background-size: 30px 30px;
+}
+
+/* 로그인 CSS */
+
+.rtc3 div.rtc3_login_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.rtc3_login_wrap div.rtc3_login {
+  display: none;
+  width: fit-content;
+  height: fit-content;
+  background: #222;
+  border: 1px solid #535353;
+  box-sizing: border-box;
+  box-shadow: 2.5px 4.3px 5px 0 rgba(0, 0, 0, 0.3);
+  z-index: 100000;
+}
+
+.rtc3_login p.login-title {
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: -1.1px;
+  color: #2bc48a;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rtc3_login div {
+  margin: 20px 40px;
+}
+
+.rtc3_login div label {
+  width: 70px;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 0.8px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.rtc3_login div input[type='text'],
+.rtc3_login div input[type='password'] {
+  width: 245px;
+  border: 1px solid #464646;
+  box-sizing: border-box;
+  color: #fff;
+  background: #000;
+  padding: 7px;
+  outline: none;
+}
+
+.rtc3_login div input[type='text']::placeholder {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.2);
+  font-style: normal;
+}
+
+.rtc3_login .rtc3_login_btn {
+  width: 100px;
+  font-size: 14px;
+  color: #fff;
+  padding: 7px 0;
+  outline: none;
+  border: 0;
+  background: #2bc48a;
+  transition: 0.5s;
+  margin: 0 auto 25px;
+  display: block;
+}
+
+.rtc3_login .rtc3_login_btn:hover {
+  background: #24a876;
+  cursor: pointer;
+}
+
+/* 내비게이션 CSS */
+
+footer.navi_wrap {
+  width: 100vw;
+  height: 70px;
+  position: fixed;
+  bottom: 0;
+  background: #313131;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+footer div.navi_subwrap {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  position: absolute;
+  padding: 0 25px;
+  box-sizing: border-box;
+}
+
+.navi01,
+.navi02,
+.navi03 {
+  display: inline-flex;
+  align-items: center;
+}
+.navi01 .rtc_name {
+  max-width: 220px;
+  height: 100%;
+  line-height: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: -0.9px;
+  display: inline-block;
+  word-break: break-all;
+  margin-right: 10px;
+}
+.navi01 .room_lock {
+  width: 12px;
+  height: 16px;
+  background-image: url('../img/webRTC/lock.svg');
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+
+.navi02 li {
+  margin-left: 10px;
+}
+.navi02 li:first-child {
+  margin-left: 0;
+}
+.navi03 {
+  z-index: 102;
+}
+.navi03 li {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.footer_btn_wrap {
+  width: 44px;
+  height: 44px;
+  background-color: #282828;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.footer_btn_wrap .footer_navi_ico {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0);
+  transition: 0.5s;
+  display: block;
+  border-radius: 50%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.footer_navi_ico:hover::before {
+  padding: 5px;
+  font-size: 12px;
+  color: #fff;
+  background: #222;
+  z-index: 103;
+  position: absolute;
+  top: -25px;
+  transition: 0.5s;
+  display: block;
+  border-radius: 5px;
+  text-align: center;
+}
+.footer_btn_wrap .footer_navi_ico:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+}
+.ico_presenter.off {
+  background-image: url('../img/webRTC/ico_presenter_off.svg');
+}
+.ico_presenter.on {
+  background-image: url('../img/webRTC/ico_presenter_on.svg');
+}
+.ico_present {
+  background-image: url('../img/webRTC/ico_present.svg');
+}
+.ico_invite {
+  background-image: url('../img/webRTC/ico_invite.svg');
+}
+.ico_userlist {
+  background-image: url('../img/webRTC/ico_user_list.svg');
+}
+.ico_chat.off {
+  background-image: url('../img/webRTC/ico_chat_off.svg');
+}
+.ico_chat.on {
+  background-image: url('../img/webRTC/ico_chat_on.svg');
+}
+.ico_mic.off {
+  background-image: url('../img/webRTC/ico_mic_off.svg');
+}
+.ico_mic.on {
+  background-image: url('../img/webRTC/ico_mic_on.svg');
+}
+.ico_camera.off {
+  background-image: url('../img/webRTC/ico_camera_off.svg');
+}
+.ico_camera.on {
+  background-image: url('../img/webRTC/ico_camera_on.svg');
+}
+.ico_exit {
+  background-image: url('../img/webRTC/ico_exit.svg');
+}
+.ico_setting {
+  background-image: url('../img/webRTC/ico_setting.svg');
+}
+.ico_presenter:hover::before {
+  content: '발표자모드';
+  width: 60px;
+  left: -10px;
+}
+.ico_present:hover::before {
+  content: '화면 공유하기';
+  width: 80px;
+  left: -25px;
+}
+.ico_invite:hover::before {
+  content: '초대하기';
+  width: 50px;
+  left: -10px;
+}
+.ico_userlist:hover::before {
+  content: '참여자목록';
+  width: 60px;
+  left: -15px;
+}
+.ico_chat:hover::before {
+  content: '채팅하기';
+  width: 50px;
+  left: -10px;
+}
+.navi03 .ico_mic:hover::before {
+  content: '마이크';
+  width: 40px;
+  left: -3px;
+}
+.navi03 .ico_camera:hover::before {
+  content: '카메라';
+  width: 40px;
+  left: -3px;
+}
+.ico_exit:hover::before {
+  content: '종료';
+  width: 30px;
+  left: 1;
+}
+.ico_setting:hover::before {
+  content: '설정';
+  width: 30px;
+  left: 1;
+}
+
+/* 영상 CSS */
+
+section.rtc3 article.contents {
+  position: relative;
+}
+
+section.rtc3 div.video_area {
+  width: 100%;
+  height: calc(100vh - 70px);
+  position: absolute;
+  top: 0;
+}
+
+div.video_area div.present_cam {
+  width: 75%;
+  height: 100%;
+  float: left;
+}
+
+div.video_area div.cam_list {
+  width: 25%;
+  height: 100%;
+  display: inline-block;
+  overflow: overlay;
+}
+
+div.present_cam div.cam_move {
+  width: 100%;
+  height: 100%;
+}
+
+div.present_cam div.cam_move_wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+div.present_cam div.cam_move_wrap div.camvideo {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #292929;
+  z-index: 1;
+  background-image: url('../img/webRTC/ico_user.svg');
+  background-size: cover;
+  background-position: center center;
+}
+
+div.present_cam div.cam_move_wrap div.camvideo video {
+  width: 100%;
+  height: 100%;
+}
+
+div.present_cam div.cam_move_wrap div.mic_off {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: url('../img/webRTC/ico_mic_off.svg') no-repeat;
+  z-index: 10;
+  display: none;
+}
+
+div.present_cam div.cam_move_wrap div.cam_user_name {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 25%);
+  z-index: 10;
+  font-size: 13px;
+  color: #fff;
+  letter-spacing: -0.65px;
+  line-height: 50px;
+  opacity: 0.5;
+  box-sizing: border-box;
+  padding: 0 50px 0 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  white-space: nowrap;
+}
+
+div.cam_list div.cam_move {
+  width: 100%;
+  float: left;
+}
+
+div.cam_list div.cam_move_wrap {
+  width: 100%;
+  position: relative;
+  float: left;
+}
+
+div.cam_list div.cam_move_wrap div.camvideo {
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+  position: relative;
+  background: #292929;
+  z-index: 1;
+  background-image: url('../img/webRTC/ico_user.svg');
+  background-size: 250%;
+  background-position: center center;
+}
+
+div.cam_list div.cam_move_wrap div.camvideo video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+div.cam_list div.cam_move_wrap div.mic_off {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: url('../img/webRTC/ico_mic_off.svg') no-repeat;
+  z-index: 10;
+  display: none;
+}
+
+div.cam_list div.cam_move_wrap div.cam_user_name {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 25%);
+  z-index: 10;
+  font-size: 13px;
+  color: #fff;
+  letter-spacing: -0.65px;
+  line-height: 50px;
+  opacity: 0.5;
+  box-sizing: border-box;
+  padding: 0 50px 0 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  white-space: nowrap;
+}
+
+div.cam_list::-webkit-scrollbar {
+  width: 6px;
+}
+
+div.cam_list::-webkit-scrollbar-thumb {
+  background: hsla(0, 0%, 42%, 0.49);
+  border-radius: 3px;
+}
+
+/* 팝업 - 공통 CSS */
+
+.popup_bg {
+  padding: 20px;
+  background: #222;
+  border: 1px solid #333;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 40px;
+  left: 30px;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.pop_title {
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: -0.75px;
+  width: 150px;
+  display: inline-block;
+}
+
+.popup_bg .on_off_btn {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.popup_bg .on_off_btn input {
+  display: none;
+}
+
+.popup_bg .on_off_btn .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #aaa;
+  transition: 0.4s;
+  width: 40px;
+  height: 24px;
+}
+
+.popup_bg .on_off_btn .slider:before {
+  position: absolute;
+  content: '';
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.popup_bg .on_off_btn input:checked + .slider {
+  background-color: #2bc48a;
+}
+
+.popup_bg .on_off_btn input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+.popup_bg .on_off_btn input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+.popup_bg .on_off_btn .slider.round {
+  border-radius: 24px;
+}
+
+.popup_bg .on_off_btn .slider.round:before {
+  border-radius: 50%;
+}
+
+.popup_bg div.copy_input {
+  background: #000;
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0;
+}
+
+.popup_bg input[type='text'] {
+  background: #000;
+  border: 0;
+  padding: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  box-sizing: border-box;
+  outline: none;
+}
+.popup_bg .copy_input label {
+  width: 30px;
+  height: 30px;
+  background-image: url(../img/webRTC/text_copy.svg);
+  background-position: 7px 7px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.popup_bg button {
+  background: #2bc48a;
+  color: #fff;
+  padding: 8px 0;
+  font-size: 13px;
+  outline: none;
+  border: 0;
+  display: block;
+  transition: 0.5s;
+}
+
+.popup_bg button:hover {
+  background: #24a876;
+  cursor: pointer;
+}
+
+/* 팝업 - 발표자모드 CSS */
+
+.pop_present_mode {
+  display: none;
+}
+.pop_present_mode.active {
+  display: block;
+}
+.pop_present_mode div {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pop_present_mode div.lock_password {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding-bottom: 0;
+}
+.lock_password ul {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.pop_present_mode button {
+  width: 108px;
+  margin: 20px auto 0;
+}
+.auto_password {
+  font-size: 12px;
+}
+
+/* 팝업 - 환경설정 메뉴 CSS */
+.pop_setmenu_wrap {
+  padding: 10px 0;
+  width: 140px;
+  display: none;
+}
+.pop_setmenu_wrap.active {
+  display: block;
+}
+.pop_setmenu_subwrap {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 0;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 15px;
+  font-weight: 300;
+}
+.pop_setmenu_subwrap:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+}
+.pop_setmenu_title {
+  white-space: nowrap;
+}
+
+/* 팝업 - 화면공유 메뉴 CSS */
+.pop_present_wrap {
+  padding: 10px 0;
+  width: 140px;
+  left: -120px;
+  display: none;
+}
+.pop_present_wrap.active {
+  display: block;
+}
+.pop_present_subwrap {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 7px 0;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 15px;
+  font-weight: 300;
+}
+.pop_present_subwrap:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+}
+.pop_present_ico {
+  padding-left: 12px;
+}
+.pop_present_title {
+  white-space: nowrap;
+}
+
+/* 팝업 - 초대 CSS */
+
+.pop_invite {
+  width: 430px;
+  left: -410px;
+  display: none;
+  box-sizing: border-box;
+}
+.pop_invite.active {
+  display: block;
+}
+
+.pop_invite div p {
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: -0.75px;
+  width: 70px;
+  float: left;
+}
+.pop_invite div.invite_url {
+  display: flex;
+  align-items: center;
+}
+
+.pop_invite div.invite_url div.copy_input input {
+  width: 286px;
+}
+
+.pop_invite div.invite_mail {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 15px;
+  padding-top: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.pop_invite div.invite_mail_wrap {
+  display: inline-block;
+}
+
+.pop_invite div.invite_mail_wrap input {
+  width: 260px;
+  height: 33px;
+  border: 1px solid #333;
+  margin-right: 3px;
+  display: inline-block;
+}
+
+.pop_invite div.invite_mail_wrap button {
+  width: 50px;
+  height: 33px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* 팝업 - 참여자목록 CSS */
+
+.pop_user_list {
+  left: -360px;
+  display: none;
+}
+.pop_user_list.active {
+  display: block;
+}
+
+.pop_user_list p.user_list_title {
+  font-size: 15px;
+  font-weight: 300;
+  width: 100%;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: default;
+}
+
+.pop_user_list p.user_list_title a.user_list_count {
+  margin: 0 2px;
+}
+
+.pop_user_list div.user_list_wrap ul {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.pop_user_list div.user_list_wrap ul:last-child {
+  margin-bottom: 0;
+}
+
+.pop_user_list div.user_list_wrap ul li {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 100;
+}
+
+.pop_user_list div.user_list_wrap ul li.user_name {
+  width: 250px;
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+}
+
+.pop_user_list div.user_list_wrap ul li.user_name span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.pop_user_list div.user_list_wrap ul li.user_name span.ico_present_mode {
+  width: 20px;
+  height: 20px;
+  background: url('../img/webRTC/ico_present_mode.svg') no-repeat;
+  margin-right: 5px;
+  display: none;
+}
+
+.pop_user_list div.user_list_wrap ul li.user_name span.ico_present_mode.active {
+  display: inline-block;
+}
+
+.pop_user_list div.user_list_wrap ul li.user_name div.name {
+  width: fit-content;
+  max-width: 180px;
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+.pop_user_list div.user_list_wrap ul li.user_name div.my_name {
+  margin-left: 2px;
+  display: inline-block;
+  color: rgba(255, 255, 255, 1);
+}
+
+li.ico_mic.on {
+  width: 20px;
+  height: 20px;
+  background: url('../img/webRTC/ico_mic_on_p.svg') no-repeat;
+}
+
+li.ico_mic.off {
+  width: 20px;
+  height: 20px;
+  background: url('../img/webRTC/ico_mic_off_p.svg') no-repeat;
+}
+
+li.ico_camera.on {
+  width: 20px;
+  height: 20px;
+  background: url('../img/webRTC/ico_camera_on_p.svg') no-repeat;
+  margin-left: 8px;
+}
+
+li.ico_camera.off {
+  width: 20px;
+  height: 20px;
+  background: url('../img/webRTC/ico_camera_off_p.svg') no-repeat;
+  margin-left: 8px;
+}
+
+li.ico_out {
+  width: 20px;
+  height: 20px;
+  background: url('../img/webRTC/ico_out.svg') no-repeat;
+  margin-left: 8px;
+}
+
+/* 알림 팝업 CSS */
+
+.rtc3_login_wrap div.alret_wrap {
+  display: none;
+  min-width: 400px;
+  height: fit-content;
+  background: #222;
+  border: 1px solid #535353;
+  box-sizing: border-box;
+  box-shadow: 2.5px 4.3px 5px 0 rgba(0, 0, 0, 0.3);
+  z-index: 100000;
+}
+
+.rtc3_login_wrap div.alret_wrap p.alret-title {
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: -1.1px;
+  color: #2bc48a;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rtc3_login_wrap div.alret_wrap div.alret {
+  margin: 40px;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+
+.rtc3_login_wrap div.alret_wrap div.alret_btn_wrap {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.rtc3_login_wrap div.alret_wrap div.alret_btn_wrap button.alret_btn {
+  font-size: 14px;
+  color: #fff;
+  padding: 7px 20px;
+  outline: none;
+  border: 0;
+  background: #2bc48a;
+  transition: 0.5s;
+  display: inline-block;
+  margin: 0 4px 25px;
+}
+
+.rtc3_login_wrap div.alret_wrap div.alret_btn_wrap button.alret_btn:hover {
+  background: #24a876;
+  cursor: pointer;
+}
+
+.rtc3_login_wrap div.alret_wrap div.alret_btn_wrap button.alret_btn.off {
+  display: none;
+}
+
+/* 채팅 CSS */
+
+div.chat_wrap {
+  width: 360px;
+  height: calc(100vh - 70px);
+  position: fixed;
+  top: 0;
+  right: -360px;
+  z-index: 5000000;
+  overflow: hidden;
+  background: #282828;
+  color: #fff;
+  transition: 0.5s;
+  box-shadow: -2px 0px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+div.chat_wrap.active {
+  right: 0;
+}
+
+div.chat_wrap div.chat_subwrap {
+  position: static;
+}
+
+div.chat_subwrap div.chat_title {
+  margin: 20px;
+}
+
+div.chat_subwrap div.chat_title ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.chat_subwrap div.chat_title ul li {
+  font-size: 18px;
+}
+
+div.chat_subwrap div.chat_title ul li.help {
+  font-size: 13px;
+  opacity: 0.5;
+  text-decoration: underline;
+  transition: 0.5s;
+}
+
+div.chat_subwrap div.chat_title ul li.help:hover {
+  opacity: 1;
+}
+
+div.chat_subwrap hr {
+  opacity: 0.2;
+  margin: 0;
+}
+
+div.chat_subwrap div.chat_field {
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 230px);
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: overlay;
+  font-size: 13px;
+  color: #dedede;
+  line-height: 1.5;
+  font-weight: 300;
+  z-index: 1;
+  word-break: break-all;
+}
+
+div.chat_subwrap div.chat_field p {
+  margin: 8px 0;
+}
+
+div.chat_subwrap div.chat_field p span {
+  display: inline-block;
+}
+
+div.chat_subwrap div.chat_field p.entery {
+  text-align: center;
+  color: #edc336;
+}
+
+div.chat_subwrap div.chat_field p.notice {
+  padding: 10px;
+  background-color: rgba(180, 180, 180, 0.1);
+  color: #fff;
+}
+
+div.chat_subwrap div.chat_field p.notice span.ico_notice {
+  width: 13px;
+  height: 13px;
+  background: url('../img/webRTC/ico_notice.svg') no-repeat;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+div.chat_subwrap div.chat_field p.comment span.user_name {
+  color: #999;
+  margin-right: 5px;
+}
+
+div.chat_subwrap div.chat_field p.whisper {
+  padding: 10px;
+  background-color: rgba(180, 180, 180, 0.1);
+  color: #fff;
+}
+
+div.chat_subwrap div.chat_field p.whisper span.ico_whisper {
+  width: 13px;
+  height: 13px;
+  background: url('../img/webRTC/ico_whisper.svg') no-repeat;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+div.chat_subwrap div.chat_field p.whisper span.user_name {
+  color: #fdbd39;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+div.chat_subwrap div.chat_field p.whisper span.whisper_comment {
+  display: block;
+  color: #dedede;
+}
+
+div.chat_subwrap div.chat_field p.exit {
+  text-align: center;
+  color: #e77079;
+}
+
+div.chat_subwrap div.chat_field p.comment.admin span.user_name {
+  color: #2bdfeb;
+}
+
+div.chat_subwrap div.chat_field p.comment.admin {
+  color: #28bfc9;
+}
+
+div.chat_subwrap div.chat_field::-webkit-scrollbar {
+  width: 6px;
+}
+
+div.chat_subwrap div.chat_field::-webkit-scrollbar-thumb {
+  background: hsla(0, 0%, 42%, 0.5);
+  border-radius: 3px;
+}
+
+div.chat_subwrap div.chat_field div.pop_whisper {
+  padding: 20px;
+  box-shadow: 6.5px 11.3px 21px 0 rgba(0, 0, 0, 0.2);
+  background-color: #222;
+  display: none;
+}
+
+div.chat_subwrap div.chat_field div.pop_whisper.active {
+  display: block;
+}
+
+div.chat_subwrap div.chat_field div.pop_whisper p.whisper {
+  margin: 0;
+  padding: 0;
+  background: inherit;
+  font-weight: 100;
+  color: #ccc;
+}
+
+div.chat_subwrap div.chat_field div.pop_whisper p.whisper span.ico_whisper {
+  background-image: url('../img/webRTC/ico_whisper_p.svg');
+  opacity: 0.5;
+}
+
+div.chat_subwrap div.chat_field div.pop_whisper div.whisper_text_wrap {
+  display: flex;
+  align-items: center;
+}
+
+div.chat_subwrap div.chat_field div.pop_whisper div.whisper_text_wrap input.whisper_text {
+  width: calc(100% - 44px);
+  display: inline-block;
+  outline: none;
+  background: #000;
+  border: 1px solid #464646;
+  color: #fff;
+  padding: 8px;
+  margin: 7px 0;
+  box-sizing: border-box;
+}
+
+div.chat_subwrap div.chat_field div.pop_whisper div.whisper_text_wrap button {
+  width: 44px;
+  height: 33px;
+  padding: 8px;
+  background-color: #2bc48a;
+  transition: 0.5s;
+  color: #fff;
+  outline: none;
+  border: 0;
+}
+
+div.chat_subwrap div.chat_field div.pop_whisper div.whisper_text_wrap button:hover {
+  background: #24a876;
+}
+
+div.chat_subwrap div.chat_field div.pop_whisper p.notify {
+  margin-bottom: 0;
+}
+
+div.chat_subwrap div.chat_field div.pop_whisper p.notify span.ico_notify {
+  width: 13px;
+  height: 13px;
+  background-image: url('../img/webRTC/ico_notify_p.svg');
+  opacity: 0.5;
+  margin-right: 5px;
+}
+
+div.chat_subwrap div.chat_input_wrap {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  word-break: break-all;
+  background: #282828;
+}
+
+div.chat_input_wrap div.chat_input {
+  margin: 20px 20px 0 20px;
+}
+
+div.chat_input_wrap div.chat_input p.user_name {
+  color: #ccc;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+div.chat_input_wrap div.chat_input div.textbox {
+  margin: 10px 0;
+}
+
+div.chat_input_wrap div.chat_input div.textbox[contenteditable='true'] {
+  color: #fff;
+  line-height: 1.5;
+  border-bottom: 1px solid #333;
+  letter-spacing: 0.5px;
+}
+
+div.chat_input_wrap div.chat_input div.textbox[contenteditable='true']:empty:before {
+  content: attr(placeholder);
+  color: rgba(255, 255, 255, 0.3);
+  display: block;
+  font-size: 12px;
+  font-weight: 300;
+  padding-bottom: 2px;
+}
+
+div.chat_input_wrap div.chat_input div.emoji_wrap {
+  padding: 5px;
+  background-color: #282828;
+  display: none;
+}
+
+div.chat_input_wrap div.chat_input div.emoji_wrap.active {
+  display: block;
+}
+
+div.chat_input_wrap div.chat_input div.emoji_wrap a {
+  font-size: 15px;
+  padding: 5px 2px;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+div.chat_input_wrap div.chat_input div.emoji_wrap a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+div.chat_input_wrap div.chat_input_btn_wrap {
+  margin: 0 20px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+div.chat_input_wrap div.chat_input_btn_wrap ul {
+  display: flex;
+  align-items: center;
+}
+
+div.chat_input_wrap div.chat_input_btn_wrap ul li.chat_input_btn {
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+div.chat_input_wrap div.chat_input_btn_wrap ul li.chat_input_btn:hover {
+  opacity: 1;
+}
+
+div.chat_input_wrap div.chat_input_btn_wrap ul li.chat_input_btn.emoji {
+  background-image: url('../img/webRTC/ico_emoji.svg');
+}
+
+div.chat_input_wrap div.chat_input_btn_wrap ul li.chat_input_btn.keyboard {
+  background-image: url('../img/webRTC/ico_keyboard.svg');
+}
+
+div.chat_input_wrap div.chat_input_btn_wrap ul li.chat_word_count {
+  font-weight: 100;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 10px;
+}
+
+div.chat_input_wrap div.chat_input_btn_wrap button {
+  font-size: 14px;
+  color: #fff;
+  padding: 7px;
+  outline: none;
+  border: 0;
+  background-color: #2bc48a;
+  transition: 0.5s;
+}
+
+div.chat_input_wrap div.chat_input_btn_wrap button:hover {
+  background-color: #24a876;
+  cursor: pointer;
+}
+
+/* 채팅 도움말 CSS */
+
+div.chat_wrap div.chat_help_wrap {
+  width: 100%;
+  height: calc(100vh - 70px);
+  padding: 20px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  background-color: #292a2d;
+  z-index: 10;
+  display: none;
+}
+
+div.chat_wrap div.chat_help_wrap.active {
+  display: block;
+}
+
+div.chat_help_wrap div.chat_help {
+  height: 100%;
+  font-size: 13px;
+  font-weight: normal;
+  color: #999;
+  line-height: 1.5;
+  position: relative;
+}
+
+div.chat_help_wrap div.chat_help ul {
+  margin-bottom: 20px;
+}
+
+div.chat_help_wrap div.chat_help ul:last-child,
+div.chat_help_wrap div.chat_help ul li:last-child {
+  margin-bottom: 0;
+}
+
+div.chat_help_wrap div.chat_help ul li {
+  margin-bottom: 5px;
+}
+
+div.chat_help_wrap div.chat_help ul li.help_title {
+  font-size: 16px;
+  color: #fff;
+}
+
+div.chat_help_wrap div.chat_help div.chat_help_close {
+  width: 100%;
+  padding: 8px 0;
+  text-align: center;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+}
+
+/* 설정화면 CSS */
+.popup_setting_dim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+.popup_setting_wrap {
+  display: none;
+}
+.popup_setting_wrap.active {
+  display: block;
+}
+.popup_setting_subwrap {
+  background-color: #222;
+  padding: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 100;
+}
+.popup_setting_title {
+  width: 100%;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 1);
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+.popup_setting_subtitle {
+  margin-bottom: 10px;
+}
+.popup_setting_sounddevice {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.popup_setting_sounddevice ul {
+  width: 300px;
+}
+.setdevice_mic {
+  margin-right: 40px;
+}
+.popup_setting_selectbox {
+  width: 100%;
+  font-size: 18px;
+  color: #fff;
+  background-color: #0a0a0a;
+  border: 1px solid #333;
+  padding: 13px 11px;
+  outline: none;
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('../img/webRTC/select_arr.svg');
+  background-repeat: no-repeat;
+  background-position: 273px 20px;
+  margin-bottom: 32px;
+}
+.popup_setting_selectbox option {
+  padding: 30px 0;
+  font-size: 15px;
+  background: #000;
+}
+.popup_setting_mictest_wrap {
+  margin-top: 15px;
+}
+.mictest_txt {
+  font-size: 17px;
+  letter-spacing: -0.85px;
+}
+.popup_setting_mictest_subwrap {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.mictest_btn {
+  display: block;
+  background-color: #2bc48a;
+  border-radius: 0;
+  outline: none;
+  border: 0;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: 0.5s;
+}
+.mictest_btn:hover {
+  background-color: #24a876;
+}
+.mictest_progress_wrap {
+  position: relative;
+  width: 530px;
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+}
+.mic_progress_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 530px;
+  height: 30px;
+  background-image: url('../img/webRTC/mic_progess_img.svg');
+  z-index: 2;
+}
+.mic_progress_gradient_wrap {
+  width: 0%;
+  height: 30px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: 0.2s;
+}
+.mic_progress_gradient {
+  width: 530px;
+  height: 30px;
+  background-image: linear-gradient(to right, #ffa800, #fff600, #15cd56);
+}
+.mic_progress_txt {
+  font-size: 12px;
+  letter-spacing: -0.6px;
+  position: absolute;
+  top: 27px;
+  left: 0;
+  z-index: 3;
+  display: none;
+}
+.mic_progress_txt.active {
+  display: block;
+}
+.popup_setting_btnwrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup_setting_btn {
+  width: 140px;
+  height: 40px;
+  outline: none;
+  border: 0;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: -0.8px;
+  margin: 30px 9px 0;
+  background-color: #787878;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.popup_setting_btn:hover {
+  background-color: #666;
+}
+.popup_setting_btn.save {
+  background-color: #2bc48a;
+}
+.popup_setting_btn.save:hover {
+  background-color: #24a876;
+}
+
+.popup_setting_videodevice {
+  width: 640px;
+  height: 200px;
+  border: 1px solid #2f2f2f;
+  box-sizing: border-box;
+  background-color: #141414;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.videotest_btn_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.camera_test_img img {
+  opacity: 0.2;
+}
+.popup_setting_btn.test_btn {
+  background-color: #2bc48a;
+  margin: 15px 0 0;
+}
+.popup_setting_btn.test_btn:hover {
+  background-color: #24a876;
+}
+.videotest_vod {
+  width: 356px;
+  height: 200px;
+  background-color: #000;
+  z-index: 2;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.videotest_vod video {
+  width: 100%;
+}
+.videotest_txt {
+  font-size: 13px;
+  color: #a2a2a2;
+  letter-spacing: -0.5;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+}
+.videotest_txt_point {
+  color: #27eea3;
+}
+.popup_setting_modal_wrap {
+  margin-top: 34px;
+}
+.video_modal_wrap {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+}
+.setdevice_camera_wrap {
+  margin-top: 34px;
+}
+.setdevice_camera .popup_setting_selectbox {
+  background-position: 610px 20px;
+  margin-bottom: 0;
+}
+.setting_bg_list_wrap {
+  width: 800px;
+  max-height: 308px;
+  overflow: overlay;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.setting_bg_list_wrap::-webkit-scrollbar {
+  width: 6px;
+}
+
+.setting_bg_list_wrap::-webkit-scrollbar-thumb {
+  background: hsla(0, 0%, 42%, 0.3);
+  border-radius: 3px;
+}
+
+.setting_bg_list_subwrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.setting_bg_list_subwrap:last-child {
+  margin-bottom: 0;
+}
+.setting_bg_list {
+  width: 256px;
+  height: 144px;
+  background-color: #141414;
+  margin-right: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.setting_bg_list:last-child {
+  margin-right: 0;
+}
+.bg_list_txt {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: relative;
+}
+.bg_list_txt i {
+  z-index: 10;
+}
+.bg_list_txt p {
+  margin-top: 10px;
+  z-index: 10;
+}
+.bg_blur {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-image: url('https://cdn.pixabay.com/photo/2017/03/25/17/55/colorful-2174045_960_720.png');
+  background-repeat: no-repeat;
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+  position: absolute;
+}
+.bg_custom {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg');
+  background-repeat: no-repeat;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  position: absolute;
+}
+.bg_list_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+.bg_list_img:hover,
+.setting_bg_list.active > .bg_list_img {
+  opacity: 1;
+}
+.setting_bg_list.active {
+  border: 3px solid #2bc48a;
+}
+
+/* range CSS */
+.range-slider {
+  margin-top: 14px;
+  z-index: 2;
+}
+.rs-range {
+  width: 100%;
+  height: 8px;
+  margin-top: 5px;
+  border-radius: 8px;
+  -webkit-appearance: none;
+  background: #454545;
+}
+.rs-range:focus {
+  outline: none;
+}
+.rs-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 8px;
+}
+.rs-range::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 8px;
+}
+.rs-range::-webkit-slider-thumb {
+  height: 26px;
+  width: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -9px;
+}
+.rs-range::-moz-range-thumb {
+  height: 26px;
+  width: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -9px;
+}
+.rs-range::-moz-focus-outer {
+  border: 0;
+}
+.rs-label {
+  position: relative;
+  transform-origin: center center;
+  visibility: hidden;
+  width: 40px;
+  background: #333;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 7px;
+  box-sizing: border-box;
+  margin-left: -14px;
+  margin-top: 10px;
+  left: attr(value);
+  color: #fff;
+  font-size: 12px;
+  display: block;
+  font-weight: 100;
+}
+.rs-range:hover ~ .rs-label {
+  visibility: visible;
+}
+
+/* onoff btn */
+.modal_btn_wrap {
+  width: 40px;
+  height: 24px;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+  margin-left: 25px;
+}
+.modal_btn {
+  position: absolute;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none; /* 체크박스 없애기 공통*/
+}
+.modal_btn + .modal_label {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  background: #999;
+  border-radius: 20px;
+  transition: 0.2s;
+  box-sizing: border-box;
+}
+.modal_btn:checked + .modal_label::after {
+  content: '';
+}
+.modal_label:hover {
+  background: #666;
+}
+.onf_btn {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: #fff;
+  transition: 0.2s;
+  box-sizing: border-box;
+}
+.modal_btn:checked + .modal_label:hover {
+  background: #24a876;
+}
+.modal_btn:checked + .modal_label .onf_btn {
+  left: 18px;
+}
+.modal_btn:checked + .modal_label {
+  background: #2bc48a;
+}
