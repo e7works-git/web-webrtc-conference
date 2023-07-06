@@ -71,7 +71,7 @@ section.rtc3 {
   border: 1px solid #535353;
   box-sizing: border-box;
   box-shadow: 2.5px 4.3px 5px 0 rgba(0, 0, 0, 0.3);
-  z-index: 100000;
+  z-index: 500;
 }
 
 .rtc3_login p.login-title {
@@ -866,7 +866,7 @@ li.ico_out {
   border: 1px solid #535353;
   box-sizing: border-box;
   box-shadow: 2.5px 4.3px 5px 0 rgba(0, 0, 0, 0.3);
-  z-index: 100000;
+  z-index: 200;
 }
 
 .rtc3_login_wrap div.alret_wrap p.alret-title {
@@ -919,7 +919,7 @@ div.chat_wrap {
   position: fixed;
   top: 0;
   right: -360px;
-  z-index: 5000000;
+  z-index: 600;
   overflow: hidden;
   background: #282828;
   color: #fff;
@@ -1303,7 +1303,7 @@ div.chat_help_wrap div.chat_help div.chat_help_close {
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 100%;
-  z-index: 5000;
+  z-index: 400;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1764,4 +1764,117 @@ div.chat_help_wrap div.chat_help div.chat_help_close {
 }
 .modal_btn:checked + .modal_label {
   background: #2bc48a;
+}
+
+/* 0213 참여자 제한 팝업 CSS */
+.rtc3 #entry.popup_dim {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1000;
+}
+
+.entry_wrap {
+  width: 400px;
+  background: #222;
+  border: 1px solid #535353;
+  box-sizing: border-box;
+  box-shadow: 2.5px 4.3px 5px 0 rgb(0 0 0 / 30%);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.entry_title {
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: -1.1px;
+  color: #2bc48a;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.entry_contentswrap {
+  width: 85%;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.entry_form {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.entry_form label {
+  width: 70px;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 0.8px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+
+.entry_form input {
+  width: 245px;
+  height: 30px;
+  border: 1px solid #464646;
+  box-sizing: border-box;
+  color: #fff;
+  background: #000;
+  padding: 7px;
+  outline: none;
+}
+
+.entry_form input:focus {
+  border: 1px solid #2bc48a;
+}
+
+.entry_contents_subtitle {
+  width: 100%;
+  font-size: 13px;
+  color: #edc336;
+  line-height: 1.5;
+  text-align: center;
+  display: block;
+}
+
+.entry_btnwrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.entry_btnwrap button {
+  width: 100px;
+  height: 32px;
+  font-size: 14px;
+  color: #fff;
+  outline: none;
+  border: 0;
+  background: #2bc48a;
+  transition: 0.5s;
+  margin: 0 auto 25px;
+  display: block;
+  cursor: pointer;
+}
+
+.entry_btnwrap button:hover {
+  background: #24a876;
+  color: #fff;
 }

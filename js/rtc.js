@@ -1327,7 +1327,7 @@ class webRTC {
     this.console.log(self, this);
     // self.console.error(item)
     $('.present_cam > div').appendTo('.cam_list');
-    $('.cam_move[name=' + item + ']').appendTo('.present_cam');
+    $(`.cam_move[name="${item}"]`).appendTo('.present_cam');
   }
   // 비디오 태그 넣기
   videoInTag(event) {
@@ -1335,7 +1335,7 @@ class webRTC {
     this.console.log(self, this);
     var re = false;
     let stream = event.target;
-    // let html = $(`div[name=${event.clientKey}]`, self.present_cam);
+    // let html = $(`div[name="${event.clientKey}"]`, self.present_cam);
     let present_html = $('div.cam_move', self.present_cam_item);
     let video, html, nickName;
     html = $(self.video_html_tag).attr({ name: event.clientKey });
@@ -1390,8 +1390,8 @@ class webRTC {
     this.console.log(self, this);
     self.console.log('videoOutTag', event);
 
-    let present_html = $(`div.cam_move[name=${event.clientKey}]`, self.present_cam_item);
-    let cam_list_html = $(`div.cam_move[name=${event.clientKey}]`, self.cam_list_item);
+    let present_html = $(`div.cam_move[name="${event.clientKey}"]`, self.present_cam_item);
+    let cam_list_html = $(`div.cam_move[name="${event.clientKey}"]`, self.cam_list_item);
     if (present_html.length) {
       present_html.remove();
     }
@@ -1403,8 +1403,8 @@ class webRTC {
   audioCng(event) {
     self = this;
     this.console.log(self, this);
-    let html = $(`div.cam_move[name=${event.clientKey}]`, self.video_area_item);
-    let html2 = $(`div.user_list_wrap ul[name=${event.clientKey}]`, self.pop_user_list);
+    let html = $(`div.cam_move[name="${event.clientKey}"]`, self.video_area_item);
+    let html2 = $(`div.user_list_wrap ul[name="${event.clientKey}"]`, self.pop_user_list);
     let is_mic = event.enable;
     self.console.log(html2, event);
 
@@ -1437,8 +1437,8 @@ class webRTC {
     self = this;
     this.console.log(self, this);
     self.console.low_debug('>> videoCng: ', event);
-    let html = $(`div.cam_move[name=${event.clientKey}]`, self.video_area_item);
-    let html2 = $(`div.user_list_wrap ul[name=${event.clientKey}]`, self.pop_user_list);
+    let html = $(`div.cam_move[name="${event.clientKey}"]`, self.video_area_item);
+    let html2 = $(`div.user_list_wrap ul[name="${event.clientKey}"]`, self.pop_user_list);
     let is_cam = event.enable;
     self.console.log(html2, event);
 

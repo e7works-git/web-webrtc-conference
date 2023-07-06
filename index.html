@@ -37,6 +37,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0"></script>
 
     <script src="https://vchatcloud.com/lib/vchatcloud-last.min.js"></script>
+    <!-- <script src="/js/e7lib.min.js"></script> -->
     <script src="https://vchatcloud.com/lib/e7lib-latest.min.js"></script>
     <script src="https://unpkg.com/convertapi-js/lib/convertapi.js"></script>
     <script src="js/libs/toastr.min.js"></script>
@@ -59,6 +60,29 @@
   <body>
     <div id="wrap">
       <section class="rtc3">
+        <!-- 0213 참여자 제한 팝업 start -->
+        <div id="entry" class="popup_dim">
+          <div class="entry_wrap">
+              <div class="entry_title">알림</div>
+              <div class="entry_contentswrap">
+                  <div class="entry_form id">
+                      <label for="id">아이디</label>
+                      <input type="text" id="id">
+                  </div>
+                  <div class="entry_form pw">
+                      <label for="pw">비밀번호</label>
+                      <input type="password" id="pw">
+                  </div>
+                  <div class="entry_contents_subtitle">올바른 형식이 아닙니다. 다시 입력해주세요.</div>
+              </div>
+              <div class="entry_btnwrap">
+                  <button class="submit">확인</button>
+                  <button class="cancel">취소</button>
+              </div>
+          </div>
+        </div>
+        <!-- 0213 참여자 제한 팝업 start -->
+        
         <div class="toast_pop" style="display: none">‘000’님이 마이크를 음소거하셨습니다.</div>
         <!-- 로그인&영상 시작 -->
         <article class="contents">
